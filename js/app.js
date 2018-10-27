@@ -55,11 +55,12 @@
 				this.dataList.unshift({
 					content: this.content.trim(),
 					isFinish: false,
-					id: this.dataList.sort((a, b) => {
+					id: this.dataList.length? this.dataList.sort((a, b) => {
 						return a.id - b.id
-					})[this.dataList.length - 1]['id'] + 1
+					})[this.dataList.length - 1]['id'] + 1:1
 				});
 				this.content = '';
+				this.hashChange();
 			},
 
 			// 删除单条（根据索引）
